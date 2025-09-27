@@ -10,14 +10,46 @@ As robots become increasingly capable of operating over extended periods—spann
 To address this, we propose a structured memory system for robots, inspired by the mind palace method from cognitive science. Our method encodes episodic experiences as scene-graph-based world instances, forming a reasoning and planning algorithm that enables targeted memory retrieval and guided navigation. To balance the exploration-recall trade-off, we introduce value-of-information-based stopping criteria that determine when the agent has gathered sufficient information. We evaluate our method on real-world experiments and introduce a new benchmark that spans popular simulation environments and actual industrial sites. Our approach significantly outperforms state-of-the-art baselines, yielding substantial gains in both answer accuracy and exploration efficiency.
 
 ## Long-term Active EQA Benchmark
-We generate the Long-term Active EQA Benchmark to test agents' understanding of the environment and the changes of the environment in long-term setting across multiple days and months.
+We introduce the **Long-term Active EQA (LA-EQA) Benchmark** to evaluate an agent’s ability to understand an environment—and track how it changes—over **days to months**.
 
-We release the LA-EQA question list and the scene files:
-1. List of questions: eqa_questions.json
-2. Scene files: link (6 GB)
+We release the LA-EQA question set and the scene files:
+
+1. **List of questions:** [`la_eqa_benchmark/eqa_questions.json`](la_eqa_benchmark/eqa_questions.json)  
+2. **Scene files (≈6 GB):** [Google Drive download](https://drive.google.com/file/d/1lNcNgpzr9SnJR1ye7vBXpWeAO-YwD14B/view?usp=sharing)
 
 
+## Mind Palace Exploration for Long-term Active EQA
 
+This repository provides the reference implementation of **Mind Palace Exploration**, our algorithm for **long-term exploration and memory-based reasoning** in LA-EQA.  
+
+
+### Installation
+
+Requires **Python ≥ 3.9**.
+
+```bash
+conda create -n laeqa python=3.9
+conda activate laeqa
+pip install -r requirements.txt
+pip install -e .
+```
+
+### Running One Example
+
+To run a single demonstration of **Mind Palace Exploration**, open the following notebook:
+
+[`run_la_eqa_mind_palace_exploration.ipynb`](scripts/run_la_eqa_mind_palace_exploration.ipynb) 
+
+The implementation uses the **OpenAI API** for LLM and VLM.  
+Before running the notebook, please set your OPENAI_API_KEY key as an environment variable:
+
+
+### Running the whole evaluation
+To evaluate the entire LA-EQA question set, open the same notebook and modify the following flag:
+
+```python
+test_one_question = False
+```
 
 ## Citing Mind Palace Exploration and LA-EQA Benchmark
 
