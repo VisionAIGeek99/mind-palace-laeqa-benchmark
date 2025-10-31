@@ -28,11 +28,13 @@ This repository provides the reference implementation of **Mind Palace Explorati
 Requires **Python ≥ 3.9**.
 
 ```bash
-conda create -n laeqa python=3.9
+conda env create -f environment.yaml
 conda activate laeqa
-pip install -r requirements.txt
 pip install -e .
 ```
+
+Installing Recognize Anything Model (RAM) - Optional
+Please follow the installation instruction in https://github.com/xinyu1205/recognize-anything
 
 ### Running One Example
 

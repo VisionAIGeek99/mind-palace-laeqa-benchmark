@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contextual-long-term-reasoning"
+version = "0.1.0"
+description = "Long-term Active EQA."
+readme = "README.md"
+authors = [
+  { name="Fadhil Ginting", email="fadhil@fieldai.com" }
+]
+requires-python = ">=3.9"
+
+dependencies = [
+  "numpy>=1.26",
+  "openai>=1.3",
+  "opencv-python>=4.9",
+  "imageio>=2.34",
+  "pillow>=10.3",
+  "tqdm>=4.66",
+  "natsort>=8.4",
+  "torch",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
